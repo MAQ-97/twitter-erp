@@ -10,17 +10,15 @@ const path = require('path');
 const os = require('os');
 const EventEmitter = require('events');
 const URL = require('url').URL;
-// console.log(URL);
+
 const {
   TooManySubscriptionsError,
   UserSubscriptionError,
   WebhookURIError,
   RateLimitError,
 } = require('./errors');
-
 var dirpth = 'D:/projects/twitter-bot/autohook';
-const auth = require('dotenv').config({path: path.resolve(dirpth, '.env.twitter')});
-// console.log(file);
+require('dotenv').config({path: path.resolve(dirpth, '.env.twitter')});
 
 const get = util.promisify(request.get);
 const del = util.promisify(request.del);
@@ -29,7 +27,7 @@ const put = util.promisify(request.put);
 
 const emitter = new EventEmitter();
 
-const DEFAULT_PORT = 1337;
+const DEFAULT_PORT = 8080;
 const WEBHOOK_ROUTE = '/webhook';
 
 let _bearerToken = null;
@@ -37,7 +35,6 @@ const bearerToken = async (auth) => {
   if (_bearerToken) {
     return _bearerToken;
   }
-
 
   const requestConfig = {
     url: 'https://api.twitter.com/oauth2/token',
@@ -250,7 +247,7 @@ class Autohook extends EventEmitter {
   startServer() {
     this.server = http.createServer((req, res) => {
       const route = url.parse(req.url, true);
-      console.log(route);
+
       if (!route.pathname) {
         return;
       }

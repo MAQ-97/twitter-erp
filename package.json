@@ -1,26 +1,57 @@
 {
-  "name": "twitter-autohook",
-  "version": "1.4.2",
-  "description": "Automatically setup and serve webhooks for the Twitter Account Activity API",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/twitterdev/autohook"
+  "_from": "twitter-autohook",
+  "_id": "twitter-autohook@1.4.2",
+  "_inBundle": false,
+  "_integrity": "sha512-bExmZFJ0QjjLcypKChzGp7FE7GWIxqIDlPiL0hUnFhzP7cD8LiImEmbnQ3r83igvGA+RQvTfBAjudm6uQtgUSg==",
+  "_location": "/twitter-autohook",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "twitter-autohook",
+    "name": "twitter-autohook",
+    "escapedName": "twitter-autohook",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
   },
-  "main": "index.js",
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/twitter-autohook/-/twitter-autohook-1.4.2.tgz",
+  "_shasum": "09d1105cbf2639c47ed57091f0fa76013752edfb",
+  "_spec": "twitter-autohook",
+  "_where": "D:\\projects\\twitter-bot\\autohook",
+  "author": {
+    "name": "Twitter"
+  },
   "bin": {
     "autohook": "./cli.js"
   },
-  "author": "Twitter",
-  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/twitterdev/autohook/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "commander": "^2.20.0",
+    "dotenv": "^8.0.0",
+    "ngrok": "^3.2.1",
+    "request": "^2.88.0"
+  },
+  "deprecated": false,
+  "description": "Automatically setup and serve webhooks for the Twitter Account Activity API",
+  "homepage": "https://github.com/twitterdev/autohook#readme",
   "keywords": [
     "twitter",
     "twitter-api",
     "webhooks"
   ],
-  "dependencies": {
-    "commander": "^2.20.0",
-    "dotenv": "^8.2.0",
-    "ngrok": "^3.2.1",
-    "request": "^2.88.0"
-  }
+  "license": "MIT",
+  "main": "index.js",
+  "name": "twitter-autohook",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twitterdev/autohook.git"
+  },
+  "version": "1.4.2"
 }
