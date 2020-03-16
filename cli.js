@@ -47,13 +47,13 @@ const subscribe = async (auth) => {
     switch (e.constructor) {
       case UserSubscriptionError:
         console.error(e.message);
-        break;        
+        break;
     }
 
     process.exit(-1);
 
   }
-  
+
 }
 
 (async () => {
@@ -62,18 +62,18 @@ const subscribe = async (auth) => {
   }
 
   try {
-    await webhook.start(argv.webhookUrl || null);  
+    await webhook.start(argv.webhookUrl || null);
   } catch(e) {
     switch (e.constructor) {
       case TooManyWebhooksError:
-        console.error('Cannot add webhook: you have exceeded the number of webhooks available', 
+        console.error('Cannot add webhook: you have exceeded the number of webhooks available',
           `to you for the '${argv.env || process.env.TWITTER_WEBHOOK_ENV}' environment.`,
           `Use 'autohook -r' to remove your existing webhooks or remove callbacks manually`,
           'using the Twitter API.');
         break;
       default:
-        console.error('Error:', e.message); 
-        break;        
+        console.error('Error:', e.message);
+        break;
     }
 
     process.exit(-1);
@@ -84,7 +84,7 @@ const subscribe = async (auth) => {
     await subscribe({
       oauth_token: argv.token || process.env.TWITTER_ACCESS_TOKEN,
       oauth_token_secret: argv.secret || process.env.TWITTER_ACCESS_TOKEN_SECRET,
-    });    
+    });
   }
 
   for (oauth in argv.subscribe) {
